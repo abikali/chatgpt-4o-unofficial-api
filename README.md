@@ -87,6 +87,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Follow Me
+## Follow Me on X
 
 Follow me on X (Twitter) for updates and more: [@triplethata](https://x.com/triplethata)
