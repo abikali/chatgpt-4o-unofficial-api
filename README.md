@@ -1,25 +1,22 @@
-# ChatGPT 4o Unofficial API Wrapper
+# Unofficial ChatGPT-4o API Wrapper
 
-A Python wrapper for the ChatGPT 4o API, providing easy access to the latest image generation capabilities.
-
-## Quick Start
-
-Just run the example script:
-
-```bash
-python3 example.py
-```
-
-This will demonstrate the image generation capabilities with a beautiful example.
+A Python wrapper for the unofficial ChatGPT-4o API, providing a simple interface for image generation.
 
 ## Features
 
-- Simple and intuitive API interface
-- Support for various image generation styles
-- Real-time progress display
-- Beautiful example showcasing the capabilities
+- Simple and intuitive API
+- Real-time status updates
+- Error handling
+- Progress tracking
+- Session management
 
-## Example Usage
+## Installation
+
+```bash
+pip install chatgpt-4o-unofficial-api
+```
+
+## Quick Start
 
 ```python
 from chatgpt_4o import ChatGPT4o
@@ -29,15 +26,67 @@ client = ChatGPT4o()
 
 # Generate an image
 response = client.generate_image(
-    prompt="A magical forest with floating lanterns",
+    prompt="A magical forest with floating lanterns in Ghibli style",
     style="default",
     size="1024x1024"
 )
 
-# The response contains the generated image URL
-print(f"Generated image URL: {response['data']['url']}")
+# Access the generated image URL
+image_url = response['data']['url']
 ```
+
+## Usage
+
+The `generate_image` method accepts the following parameters:
+
+- `prompt` (str): The text description of the image you want to generate
+- `style` (str, optional): The style of the image. Defaults to "default"
+- `size` (str, optional): The size of the generated image. Defaults to "1024x1024"
+- `quality` (str, optional): The quality of the generated image. Defaults to "standard"
+- `model` (str, optional): The model to use for generation. Defaults to "default"
+
+## Example
+
+```python
+from chatgpt_4o import ChatGPT4o
+
+def main():
+    client = ChatGPT4o()
+
+    response = client.generate_image(
+        prompt="A cozy house in the clouds with a magical cat bus, Ghibli style",
+        style="default",
+        size="1024x1024"
+    )
+
+    print(f"Generated image URL: {response['data']['url']}")
+
+if __name__ == "__main__":
+    main()
+```
+
+## Error Handling
+
+The wrapper includes built-in error handling for common issues:
+
+```python
+from chatgpt_4o import ChatGPT4o, ChatGPT4oError
+
+try:
+    client = ChatGPT4o()
+    response = client.generate_image(prompt="Your prompt here")
+except ChatGPT4oError as e:
+    print(f"Error: {e}")
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Follow Me
+
+Follow me on X (Twitter) for updates and more: [@triplethata](https://x.com/triplethata)

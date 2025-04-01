@@ -90,7 +90,7 @@ def main():
     client = ChatGPT4o()
 
     response = client.generate_image(
-        prompt="A magical forest with floating lanterns",
+        prompt="A cozy house in the clouds with a magical cat bus, Ghibli style",
         style="default",
         size="1024x1024"
     )
